@@ -1,0 +1,38 @@
+.about__wrapper {
+    min-height: 510px;
+    display: flex;
+    gap: 120px;
+    padding-top: 90px;
+    padding-bottom: 34px;
+}
+
+.about__title {
+    margin-bottom: 30px;
+}
+
+.about__description {
+    white-space: pre-line;
+}
+
+.about__description:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.about__right {
+    display: flex;
+    gap: 27px;
+    flex-direction: column;
+}
+
+.about__right-img {
+    background-image: url(../image/about-img.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 580px;
+    height: 330px;
+}
+
+.about__link {
+    margin-left: auto;
+}

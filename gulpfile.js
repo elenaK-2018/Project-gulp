@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
 import gulpCssimport from 'gulp-cssimport';
+import {deleteSync} from 'del';
 
 
     // задачи 
@@ -52,14 +53,22 @@ export const server = () => {
         './src/image/**/*',
         './src/fonts/**/*'
     ], copy);   
-}
+};
+
+export const clear = (done) => {
+    deleteSync(['dist/**/*'], {
+        force: true,
+    });
+    done();
+};
 
     // запуск 
 
-export default gulp.series(
-    gulp.parallel(html, css, js, copy),
-    server
-);   
+export const base = gulp.parallel(html, css, js, copy);
+
+export const build = gulp.series(clear, base);
+
+export default gulp.series( base, server);
 
 
 

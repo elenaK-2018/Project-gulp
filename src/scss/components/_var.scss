@@ -1,0 +1,37 @@
+$orange: #ff8a00;
+$white: #fff;
+$gray: #282626;
+$background: #f2f0f1;
+
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1280px;
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: #{$laptop}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin font($name, $weight, $name-file, $local: $name) {
+    font: {
+        family: $name;
+        weight: $weight;
+        display: swap;
+    }
+    src: local($local),
+        url("../fonts/#{ $name-file }-#{ $weight }.woff2") format("woff2"),
+        url("../fonts/#{ $name-file }-#{ $weight }.woff") format("woff");
+}

@@ -7,7 +7,18 @@
     <link rel="preload" href="fonts/HelveticaNeueCyr-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/Comfortaa-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <title>Friendly House</title> 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const createLink = url => {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = url;
+                document.head.append(link);
+            };
+            createLink('css/style.css');
+        })
+    </script>
 
     <!-- <script defer src="libs/swiper-bundle.min.js"></script>
     <script defer src="libs/jquery-3.7.1.min.js"></script> -->
@@ -46,7 +57,7 @@
                     </ul>
                 </nav>
 
-                <img class="header__logo-img" src="image/logo.svg" alt="Логотип компании FriendlyHouse">
+                <img loading = "lazy" class="header__logo-img" src="image/logo.svg" alt="Логотип компании FriendlyHouse" width="355.51" height="71.83">
 
                 <div class="header__contact">
                     <svg class="header__tel-img" width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" aria-label="Телефон">
@@ -66,10 +77,16 @@
                 <div class="hero__wrapper">
                     <h2 class="hero__title"><span class="title-orange title">Сара ждёт, </span>когда&nbsp;найдётся её&nbsp;человек</h2>
                     <button class="hero__btn btn" type="button" aria-haspopup="dialog">
-                        <img src="image/button.png" alt="Кнопка вызова модального окна в виде лапки" class="btn__img">
+                        <img src="image/button.png" alt="Кнопка вызова модального окна в виде лапки" class="btn__img" width="111" height="101">
                         <span class="btn__text">Жми на лапку, чтобы помочь!</span>
                     </button>
-                    <img class="hero__img" src="image/sara.png" alt="Фотография собаки Сары">
+                    <!-- <picture>
+                        <source media="(max-width: 460px)" src="image/sara-mob.avif" type="image/avif">
+                        <source media="(max-width: 460px)" src="image/sara-mob.webp" type="image/webp">
+                        <source media="(max-width: 460px)" src="image/sara-mob.png" type="image/png">
+                        <img class="hero__img" src="image/sara.png" alt="Фотография собаки Сары">
+                    </picture> -->
+                    <img loading="lazy" class="hero__img" src="image/sara.png" alt="Фотография собаки Сары" width="580" height="580">
                 </div>
             </div>
         </section>
@@ -107,7 +124,12 @@
                 <div class="projects__wrapper">
                     <ul class="projects__list list-pr">
                         <li class="list-pr__item">
-                            <img class="list-pr__img" src="image/project_1.jpg" alt="Фотография с изображением собаки">
+                            <!-- <picture>
+                                <source srcset="image/project_1.avif" type="image/avif">
+                                <source srcset="image/project_1.webp" type="image/webp">
+                                <img class="list-pr__img" src="image/project_1.jpg" alt="Фотография с изображением собаки">
+                            </picture> -->
+                            <img loading="lazy" class="list-pr__img" src="image/project_1.jpg" alt="Фотография с изображением собаки" width="280" height="180">
                             <div class="list-pr__block">
                                 <h3 class="list-pr__title">Новый дом для животных</h3>
                                 <p class="list-pr__description">Приют появился практически одновременно с созданием Фонда в ...</p>
@@ -121,7 +143,7 @@
                         </li>
     
                         <li class="list-pr__item">
-                            <img class="list-pr__img" src="image/project_2.jpg" alt="фотография с изображением собаки">
+                            <img loading="lazy" class="list-pr__img" src="image/project_2.jpg" alt="фотография с изображением собаки" width="280" height="180">
                             <div class="list-pr__block">
                                 <h3 class="list-pr__title">Маленькие модники</h3>
                                 <p class="list-pr__description">Наши котики и собачки тоже любят наряжаться, чтобы красиво выглядеть ...</p>
@@ -134,7 +156,7 @@
                             </div>
                         </li>
                         <li class="list-pr__item">
-                            <img class="list-pr__img" src="image/project_3.jpg" alt="фотография с изображением собаки">
+                            <img loading="lazy" class="list-pr__img" src="image/project_3.jpg" alt="фотография с изображением собаки" width="280" height="180">
                             <div class="list-pr__block">
                                 <h3 class="list-pr__title">Поиграй со мной!</h3>
                                 <p class="list-pr__description">Новая программа нашего приюта “Поиграй со мной”. Приводите своих ...</p>
@@ -147,7 +169,7 @@
                             </div>
                         </li>
                         <li class="list-pr__item">
-                            <img class="list-pr__img" src="image/project_4.jpg" alt="фотография с изображением собаки">
+                            <img loading="lazy" class="list-pr__img" src="image/project_4.jpg" alt="фотография с изображением собаки" width="280" height="180">
                             <div class="list-pr__block">
                                 <h3 class="list-pr__title">Конкурс “Лучшее фото”</h3>
                                 <p class="list-pr__description">Приходи к нам в Friendly House и делай классные фотографии наших животн...</p>
@@ -162,7 +184,7 @@
                     </ul>
     
                     <aside class="info">
-                        <img class="info__banner" src="image/banner.jpg" alt="Фотография с изображением собак">
+                        <img loading="lazy" class="info__banner" src="image/banner.jpg" alt="Фотография с изображением собак" width="380" height="450">
                         <div class="info__description">
                             <h2 class="info__title">Собака лучший друг человека, или.... собаки?</h2>
                             <a href="#" class="info__link projects__link link" aria-label="Ссылка, которая ведёт на эту статью">
@@ -177,18 +199,18 @@
                     <aside class="other-projects">
                         <h3 class="other-projects__title">Больше проектов</h3>
                         <div class="other-projects__wrapper" aria-label="Список проектов">
-                            <img class="other-projects__photo" src="image/other-pr-1.jpg" alt="фотография с изображением питомца" tabindex="0">
-                            <img class="other-projects__photo" src="image/other-pr-2.jpg" alt="фотография с изображением питомца" tabindex="0">
-                            <img class="other-projects__photo" src="image/other-pr-3.jpg" alt="фотография с изображением питомца" tabindex="0">
-                            <img class="other-projects__photo" src="image/other-pr-4.jpg" alt="фотография с изображением питомца">
-                            <img class="other-projects__photo other-projects__photo_none-mobile" src="image/other-pr-5.jpg" alt="фотография с изображением питомца" tabindex="0">
-                            <img class="other-projects__photo other-projects__photo_none-mobile" src="image/other-pr-6.jpg" alt="фотография с изображением питомца" tabindex="0">
-                            <img class="other-projects__photo other-projects__photo_none" src="image/other-pr-7.jpg" alt="фотография с изображением питомца" tabindex="0">
-                            <img class="other-projects__photo other-projects__photo_none " src="image/other-pr-8.jpg" alt="фотография с изображением питомца" tabindex="0">
-                            <img class="other-projects__photo other-projects__photo_none" src="image/other-pr-9.jpg" alt="фотография с изображением питомца" tabindex="0">
-                            <img class="other-projects__photo other-projects__photo_none" src="image/other-pr-10.jpg" alt="фотография с изображением питомца" tabindex="0">
-                            <img class="other-projects__photo other-projects__photo_none"  src="image/other-pr-11.jpg" alt="фотография с изображением питомца" tabindex="0">
-                            <img class="other-projects__photo other-projects__photo_none" src="image/other-pr-12.jpg" alt="фотография с изображением питомца" tabindex="0">
+                            <img loading="lazy" class="other-projects__photo" src="image/other-pr-1.jpg" alt="фотография с изображением питомца" tabindex="0" width="80" height="70">
+                            <img loading="lazy" class="other-projects__photo" src="image/other-pr-2.jpg" alt="фотография с изображением питомца" tabindex="0" width="80" height="70">
+                            <img loading="lazy" class="other-projects__photo" src="image/other-pr-3.jpg" alt="фотография с изображением питомца" tabindex="0" width="80" height="70">
+                            <img loading="lazy" class="other-projects__photo" src="image/other-pr-4.jpg" alt="фотография с изображением питомца" tabindex="0" width="80" height="70">
+                            <img loading="lazy" class="other-projects__photo other-projects__photo_none-mobile" src="image/other-pr-5.jpg" alt="фотография с изображением питомца" tabindex="0" width="80" height="70" >
+                            <img loading="lazy" class="other-projects__photo other-projects__photo_none-mobile" src="image/other-pr-6.jpg" alt="фотография с изображением питомца" tabindex="0" width="80" height="70">
+                            <img loading="lazy" class="other-projects__photo other-projects__photo_none" src="image/other-pr-7.jpg" alt="фотография с изображением питомца" tabindex="0" width="80" height="70">
+                            <img loading="lazy" class="other-projects__photo other-projects__photo_none " src="image/other-pr-8.jpg" alt="фотография с изображением питомца" tabindex="0" width="80" height="70">
+                            <img loading="lazy" class="other-projects__photo other-projects__photo_none" src="image/other-pr-9.jpg" alt="фотография с изображением питомца" tabindex="0" width="80" height="70">
+                            <img loading="lazy" class="other-projects__photo other-projects__photo_none" src="image/other-pr-10.jpg" alt="фотография с изображением питомца" tabindex="0" width="80" height="70">
+                            <img loading="lazy" class="other-projects__photo other-projects__photo_none"  src="image/other-pr-11.jpg" alt="фотография с изображением питомца" tabindex="0" width="80" height="70">
+                            <img loading="lazy" class="other-projects__photo other-projects__photo_none" src="image/other-pr-12.jpg" alt="фотография с изображением питомца" tabindex="0" width="80" height="70">
                         </div>
 
                         <a href="#" class="other-projects__arrow projects__link link" aria-label="Ссылка, по которой можно посмотреть всех собак">

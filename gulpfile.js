@@ -14,14 +14,15 @@ import gulpWebp from 'gulp-webp';
 import gulpAvif from 'gulp-avif';
 import { stream as critical } from 'critical';
 import gulpIf from 'gulp-if';
-
-
+import autoprefixer from 'gulp-autoprefixer';
+import babel from 'gulp-babel';
+import plumber from 'gulp-plumber';
 
 
 
 const prepros = true;    // менять на false
 
-let dev = false;
+let dev = false;      // усли true, то продакшн сборка
 
 const sass = gulpSass(sassPkg);
 
@@ -47,6 +48,7 @@ export const style = () => {
             .src('src/scss/**/*.scss')
             .pipe(gulpIf(dev, sourcemaps.init())) 
             .pipe(sass().on('errors', sass.logError))
+            .pipe(autoprefixer())
             .pipe(cleanCSS({
                 2:  { specialComments: 0,
                 }
@@ -62,10 +64,11 @@ export const style = () => {
     .pipe(gulpCssimport({
         extensions: ['css'],
     }))
-.pipe(cleanCSS({
-    2: { specialComments: 0,
-    }
-}))
+    .pipe(autoprefixer())    // по умолч. поддерживает две послед. версии браузера, но мы можем изменить в package.json
+    .pipe(cleanCSS({
+        2: { specialComments: 0,
+        }
+    }))
     .pipe(gulpIf(dev, sourcemaps.write('../maps')))
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
@@ -73,7 +76,12 @@ export const style = () => {
 
 export const js = () => gulp
     .src([...allJS, 'src/js/**/*.js'])
-    .pipe(gulpIf(dev, sourcemaps.init()))   
+    .pipe(plumber())
+    .pipe(gulpIf(dev, sourcemaps.init()))
+    .pipe(babel({
+        presets: ['@babel/preset-env'],
+        ignore: [...allJS, 'src/js/**/*.min.js']
+    }))   
     .pipe(terser())
     .pipe(concat('index.min.js'))
     .pipe(gulpIf(dev, sourcemaps.write('../maps')))

@@ -16,7 +16,7 @@ body {
     font-style: normal;
     line-height: 30px;
     color: var(--gray);
-    background-color: var(--white);
+    background-color: rgb($white);
     overflow-x: hidden;
     min-width: 320px;
     min-height: 100vh;
@@ -26,7 +26,19 @@ body {
     max-width: 1220px;
     margin: 0 auto;
     padding: 0 20px;
+    @media (max-width: 1024px) {
+        max-width: 920px;
+    }
+    @media (max-width: 768px) {
+        max-width: 720px;
+        padding: 0 10px;
+    }
+    @media (max-width: 480px) {
+        max-width: 290px;
+        padding: 0 10px;
+    }
 }
+
 
 button {
     padding: 0;
@@ -61,10 +73,22 @@ figure {
     font-size: 50px;
     line-height: 60px;
     font-weight: 400;
+    @media (max-width: 1024px) {
+        font-size: 44px;
+        line-height: 54px;
+    }
+    @media (max-width: 768px) {
+        font-size: 30px;
+        line-height: 34px;
+    }
+    @media (max-width: 480px) {
+            font-size: 20px;
+            line-height: 24px;
+    }
 }
 
 .title-orange {
-    color: var(--orange);
+    color: rgb($orange);
 }
 
 .section:not(:first-child) {
@@ -86,18 +110,26 @@ figure {
     font-size: 14px;
     line-height: 22px;
     font-weight: 550;
-    color: var(--orange);
-}
+    color: rgb($orange);
 
-.btn__img {
-    width: 100.98px;
-    height: 86.83px;
-    transition: 0.3s ease-in-out;
-}
+    &__text {
+        display: block;
+    }
 
-.btn__img:hover {
-    -webkit-filter: drop-shadow(4px 6px 0px rgba(0, 0, 0, 0.25));
-    filter: drop-shadow(4px 6px 0px rgba(0, 0, 0, 0.25));
+    &__img {
+        width: 100.98px;
+        height: 86.83px;
+        transition: 0.3s ease-in-out;
+        &_form {
+            width: 66.41px;
+            height: 57.6px;
+            transition: 0.3s ease-in-out;
+        }
+        &:hover {
+            -webkit-filter: drop-shadow(4px 6px 0px rgba(0, 0, 0, 0.25));
+            filter: drop-shadow(4px 6px 0px rgba(0, 0, 0, 0.25));
+        }
+    }
 }
 
 .link {
@@ -105,7 +137,7 @@ figure {
     gap: 19px;
     line-height: 26px;
     font-weight: 550;
-    color: var(--orange);
+    color: rgb($orange);
 }
 
 .visually-hidden {
@@ -120,37 +152,10 @@ figure {
     overflow: hidden;
 }
 
-@media (max-width: 1024px) {
-    .container {
-        max-width: 920px;
-    }
-
-    .title {
-        font-size: 44px;
-        line-height: 54px;
-    }
+.no-scroll {
+    overflow: hidden;
 }
 
-@media (max-width: 768px) {
-    .container {
-        max-width: 720px;
-        padding: 0 10px;
-    }
-
-    .title {
-        font-size: 30px;
-        line-height: 34px;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        max-width: 290px;
-        padding: 0 10px;
-    }
-
-    .title {
-        font-size: 20px;
-        line-height: 24px;
-    }
+body.lock {
+    overflow: hidden;
 }

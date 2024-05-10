@@ -1,70 +1,64 @@
-.list__item_one {
-    display: flex;
-    gap: 120px;
-}
+.list {
+    &__item {
+        margin-bottom: 50px;
+        &_one {
+            display: flex;
+            gap: 120px;
+        }
 
-.list__item {
-    margin-bottom: 50px;
-}
+        &_two {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
 
-.list__description-one {
-    max-width: 483px;
-}
+        &_three {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+    }
 
-.list__description-title:before {
-    font-family: "Comfortaa";
-    content: counter(my-counter);
-    counter-increment: my-counter;
-    color: var(--orange);
-    font-size: 45px;
-    font-weight: 300;
-    font-style: normal;
-    margin-right: 52px;
-}
+    &__description_one {
+        max-width: 483px;
+    }
 
-.list__description-title {
-    display: inline-block;
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 40px;
-    margin-bottom: 20px;
-}
+    &__description-title {
+        display: inline-block;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 40px;
+        margin-bottom: 20px;
+        &:before {
+            font-family: "Comfortaa";
+            content: counter(my-counter);
+            counter-increment: my-counter;
+            color: rgb($orange);;
+            font-size: 45px;
+            font-weight: 300;
+            font-style: normal;
+            margin-right: 52px;
+        }
+    }
 
-.list__description-text {
-    padding-left: 78px;
-}
+    &__description-text {
+        padding-left: 78px;
+        &_two {
+            padding-left: 0;
+        }
 
-.list__description-text:not(:last-child) {
-    margin-bottom: 30px;
-}
+        &_three {
+            font-weight: 500;
+            max-width: 500px;
+        }
+    }
 
-.list__description_two {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
+    &__description-text:not(:last-child) {
+        margin-bottom: 30px;
+    }
 
-.list__description-text_two {
-    padding-left: 0;
-}
-
-.list__item_three {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.help__img_three {
-    max-width: 580px;
-    min-height: 382px;
-}
-
-.list__description-text_three {
-    font-weight: 500;
-    max-width: 500px;
-}
-
-.list__description-block {
-    max-width: 580px;
-    order: 1;
+    &__description-block {
+        max-width: 580px;
+        order: 1;
+    }
 }

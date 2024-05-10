@@ -1,49 +1,49 @@
-.menu__wrapper {
-    max-width: 394px;
-    min-height: 394px;
-    top: -100%;
-    background-color: var( --background);
-    position: absolute;
-    border-bottom: 10px solid var(--orange);
-    transition: 0.4s ease-in-out;
+.menu {
+    &__wrapper {
+        max-width: 394px;
+        min-height: 394px;
+        top: -100%;
+        background-color: rgb( $background);
+        position: absolute;
+        border-bottom: 10px solid rgb($orange);;
+        transition: 0.4s ease-in-out;
+    }
+
+    &__wrapper.active {
+        z-index: 30;
+        transition: 0.4s ease-in-out;
+        top: 120px;
+    }
+
+    &__wrapper:before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("../image/triangle.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 52px;
+        height: 30px;
+        top: -30px;
+        left: 0;
+    }
+
+    &__list {
+        padding-top: 70.5px;
+    }
+
+    &__item:not(:last-child) {
+        border-bottom: 1px solid rgb($orange);
+    }
+
+    &__link {
+        display: block;
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 550;
+        padding: 15px 20px 15px 19px;
+        will-change: transform;
+    }
 }
 
-.menu__wrapper.active {
-    z-index: 30;
-    transition: 0.4s ease-in-out;
-    top: 120px;
-}
 
-.menu__wrapper:before {
-    content: "";
-    display: block;
-    position: absolute;
-    background-image: url("../image/triangle.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 52px;
-    height: 30px;
-    top: -30px;
-    left: 0;
-}
-
-.menu__list {
-    padding-top: 70.5px;
-}
-
-.menu__item:not(:last-child) {
-    border-bottom: 1px solid var(--orange);
-}
-
-.menu__link {
-    display: block;
-    font-size: 20px;
-    line-height: 30px;
-    font-weight: 550;
-    padding: 15px 20px 15px 19px;
-    will-change: transform;
-}
-
-body.lock {
-    overflow: hidden;
-}

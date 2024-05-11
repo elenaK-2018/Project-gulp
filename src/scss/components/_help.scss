@@ -20,7 +20,9 @@
             gap: 20px;
         }
         &_two {
-            background-image: url("../image/help_img-two.jpg");
+            background: {
+                image: url("../image/help_img-two.jpg");
+            }
             height: 349px;
         }
         &_three {

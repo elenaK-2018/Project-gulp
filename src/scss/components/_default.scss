@@ -15,8 +15,8 @@ body {
     font-weight: 300;
     font-style: normal;
     line-height: 30px;
-    color: var(--gray);
-    background-color: rgb($white);
+    color: $gray;
+    background-color: $white;
     overflow-x: hidden;
     min-width: 320px;
     min-height: 100vh;
@@ -69,10 +69,7 @@ figure {
 }
 
 .title {
-    font-family: "Comfortaa";
-    font-size: 50px;
-    line-height: 60px;
-    font-weight: 400;
+    @extend %title;
     @media (max-width: 1024px) {
         font-size: 44px;
         line-height: 54px;
@@ -88,7 +85,7 @@ figure {
 }
 
 .title-orange {
-    color: rgb($orange);
+    color: $orange;
 }
 
 .section:not(:first-child) {
@@ -110,7 +107,7 @@ figure {
     font-size: 14px;
     line-height: 22px;
     font-weight: 550;
-    color: rgb($orange);
+    color: $orange;
 
     &__text {
         display: block;
@@ -137,7 +134,7 @@ figure {
     gap: 19px;
     line-height: 26px;
     font-weight: 550;
-    color: rgb($orange);
+    color: $orange;
 }
 
 .visually-hidden {

@@ -7,6 +7,13 @@ $tablet: 768px;
 $laptop: 1024px;
 $desktop: 1280px;
 
+%title {                                //шаблон
+    font-family: "Comfortaa";
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: 400;
+}
+
 @mixin tablet {
     @media (min-width: #{$tablet}) {
         @content;
@@ -35,3 +42,11 @@ $desktop: 1280px;
         url("../fonts/#{ $name-file }-#{ $weight }.woff2") format("woff2"),
         url("../fonts/#{ $name-file }-#{ $weight }.woff") format("woff");
 }
+
+// @mixin bg-full ($url) {
+//     background: {
+//         image: url($url);
+//         size: contain;
+//         repeat: no-repeat;
+//     };
+// }

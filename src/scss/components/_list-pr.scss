@@ -24,7 +24,7 @@
         transition: 0.4s ease-in-out;
         &:hover,
         &:focus {
-            border: 1px solid rgb(&orange);
+            border: 1px solid $orange;
         }
         @media (max-width: 768px) {
             gap: 10px;

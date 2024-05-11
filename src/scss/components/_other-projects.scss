@@ -45,7 +45,7 @@
         &:hover,
         &:focus {
             width: 100%;
-            border: 1px solid rgb($orange);
+            border: 1px solid $orange;
         }
         &_none {
             @media (max-width: 1024px) {
@@ -72,5 +72,4 @@
             display: none;
         }
     }
-    
 }

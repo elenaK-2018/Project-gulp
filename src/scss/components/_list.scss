@@ -33,7 +33,7 @@
             font-family: "Comfortaa";
             content: counter(my-counter);
             counter-increment: my-counter;
-            color: rgb($orange);;
+            color: $orange;
             font-size: 45px;
             font-weight: 300;
             font-style: normal;

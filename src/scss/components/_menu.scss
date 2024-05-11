@@ -3,9 +3,9 @@
         max-width: 394px;
         min-height: 394px;
         top: -100%;
-        background-color: rgb( $background);
+        background-color: $background;
         position: absolute;
-        border-bottom: 10px solid rgb($orange);;
+        border-bottom: 10px solid $orange;
         transition: 0.4s ease-in-out;
     }
 
@@ -19,9 +19,12 @@
         content: "";
         display: block;
         position: absolute;
-        background-image: url("../image/triangle.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
+        background: {
+            image: url("../image/triangle.svg");
+            repeat: no-repeat;
+            size: contain;
+        }
+        // @include bg-full("../image/triangle.svg");      //можно использовать миксин
         width: 52px;
         height: 30px;
         top: -30px;
@@ -33,7 +36,7 @@
     }
 
     &__item:not(:last-child) {
-        border-bottom: 1px solid rgb($orange);
+        border-bottom: 1px solid $orange;
     }
 
     &__link {

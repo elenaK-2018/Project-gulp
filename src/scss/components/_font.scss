@@ -1,29 +1,11 @@
 @font-face {
-    font-family: "HelveticaNeueCyr";
-    src: local("HelveticaNeueCyr-Light"), local("Helvetica Neue Cyr Light"),
-        url("../fonts/HelveticaNeueCyr-Light.woff2") format("woff2"),
-        url("../fonts/HelveticaNeueCyr-Light.woff") format("woff");
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
+    @include font("HelveticaNeueCyr", 300, "HelveticaNeueCyr", "Helvetica Neue Cyr Light");
 }
 
 @font-face {
-    font-family: "HelveticaNeueCyr";
-    src: local("HelveticaNeueCyr-Medium"), local("Helvetica Neue Cyr Medium"),
-        url("../fonts/HelveticaNeueCyr-Medium.woff2") format("woff2"),
-        url("../fonts/HelveticaNeueCyr-Medium.woff") format("woff");
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
+    @include font("HelveticaNeueCyr", 500, "HelveticaNeueCyr", "Helvetica Neue Cyr Medium");
 }
 
 @font-face {
-    font-family: "Comfortaa";
-    src: local("Comfortaa Bold"), local("Comfortaa-Bold"),
-        url("../fonts/Comfortaa-Bold.woff2") format("woff2"),
-        url("../fonts/Comfortaa-Bold.woff") format("woff");
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
+    @include font("Comfortaa", 700, "Comfortaa", "Comfortaa-Bold");
 }

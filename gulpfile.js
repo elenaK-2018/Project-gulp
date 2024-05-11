@@ -11,7 +11,7 @@ import concat from 'gulp-concat';
 import sourcemaps from 'gulp-sourcemaps';
 import gulpImg from 'gulp-image';
 import gulpWebp from 'gulp-webp';
-import gulpAvif from 'gulp-avif';
+// import gulpAvif from 'gulp-avif';
 import { stream as critical } from 'critical';
 import gulpIf from 'gulp-if';
 import autoprefixer from 'gulp-autoprefixer';
@@ -20,7 +20,7 @@ import plumber from 'gulp-plumber';
 
 
 
-const prepros = true;    // менять на false
+const prepros = true;    // менять на false, если не используем препроцессор
 
 let dev = false;      // усли true, то продакшн сборка
 
@@ -114,15 +114,15 @@ export const webp = () => gulp
         once: true
     }));
 
-export const avif = () => gulp
-    .src('src/image/**/*.{jpg,jpeg,png}')
-    .pipe(gulpAvif({
-        quality: 50
-    }))
-    .pipe(gulp.dest('dist/image'))
-    .pipe(browserSync.stream({
-        once: true
-    }));
+// export const avif = () => gulp
+//     .src('src/image/**/*.{jpg,jpeg,png}')
+//     .pipe(gulpAvif({
+//         quality: 50
+//     }))
+//     .pipe(gulp.dest('dist/image'))
+//     .pipe(browserSync.stream({
+//         once: true
+//     }));
 
 export const critCSS = () => gulp
     .src('dist/*.html')
@@ -161,7 +161,7 @@ export const server = () => {
     gulp.watch('./src/js/**/*.js', js);  
     gulp.watch('./src/fonts/**/*', copy); 
     gulp.watch('src/image/**/*.{jpg,jpeg,png}', webp);  
-    gulp.watch('src/image/**/*.{jpg,jpeg,png}', avif);  
+    // gulp.watch('src/image/**/*.{jpg,jpeg,png}', avif);  
 };
 
 export const clear = (done) => {
@@ -177,7 +177,7 @@ export const develop = async() => {
     dev = true;
 }
 
-export const base = gulp.parallel(html, style, js, img, avif, webp, copy);
+export const base = gulp.parallel(html, style, js, img, webp, copy);      //убрала avif
 
 export const build = gulp.series(clear, base, critCSS);
 
